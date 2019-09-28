@@ -1,0 +1,12 @@
+<div class="ion-content" >
+    <img src="assets/images/bielmann_app_logo.png" style="width: 200px;">
+    <ion-row justify-content-center align-items-center style="margin-top: 10px; flex-direction: column">
+        <ion-row class="user_url">
+            <ion-input placeholder="User Name" type="text" [(ngModel)]="username"></ion-input>
+        </ion-row>
+        <ion-row class="user_url user_password">
+            <ion-input placeholder='Password' type='password' [(ngModel)]="password"></ion-input>
+        </ion-row>
+        <ion-button shape="round" class="user_sub_btn" (click)="submit()">SUBMIT</ion-button>
+    </ion-row>
+</div>

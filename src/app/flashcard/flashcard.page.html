@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Flashcard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container">
+  <ion-grid >
+    <ion-row >
+      <ion-col size="8">
+        <ion-title style="font-size: 14px; padding: 5px;padding-bottom: 10px;">Question title</ion-title>
+        <ion-row class="ans_box">
+          <span>Question Details</span>
+        </ion-row>
+        <ion-row class="image_cont">
+          <img src="assets/images/black_img.jpg" style="width: 100%; height: 200px;">
+        </ion-row>
+        <ion-row class="img_info">
+          <span>Image Info</span>
+        </ion-row>
+        <ion-row class="img_info">
+          <span>Tags</span>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4">
+        <ion-row class="sol_btn">
+          <ion-button (click)="gologin()" style="width: 300px">Solution</ion-button>
+        </ion-row>
+        <ion-row class="up_down_btn">
+          <ion-button (click)="gologin()" style="width: 120px">UP</ion-button>
+          <ion-button (click)="gologin()" style="width: 120px">DOWN</ion-button>
+        </ion-row>
+        <ion-row class="img_info">
+          <span>Tags</span>
+        </ion-row>
+        <ion-tab-bar class="tabs_con">
+          <ion-tab-button selected=true>
+            <ion-label>TAB 1</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button>
+            <ion-label>TAB 2</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button>
+            <ion-label>TAB 3</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button>
+            <ion-label>TAB 4</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button>
+            <ion-label>TAB 4</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button>
+            <ion-label>TAB 5</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+        <ion-row class="question_list">
+          <span class="que_list_item_sel">Question 1 Question 11Question 1Question 1Question 1Question 1</span>
+          <span class="que_list_item">Question 2</span>
+          <span class="que_list_item">Question 3</span>
+          <span class="que_list_item">Question 4</span>
+          <span class="que_list_item">Question 5</span>
+          <span class="que_list_item">Question 6</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

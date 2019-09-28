@@ -1,0 +1,22 @@
+<div class="ion-content" >
+    <ion-row justify-content-center align-items-center style="margin-top: 8px; flex-direction: column">
+        <ion-title>
+            <img src="assets/images/bielmann_app_logo.png" style="width: 180px;">
+        </ion-title>
+        <ion-row class="user_url">
+            <ion-label class="ssl-label">{{sslValue}}</ion-label>
+            <ion-input placeholder="Please enter base url" type="url" inputmode="url" [(ngModel)]="Url"></ion-input>
+        </ion-row>
+
+        <ion-item> 
+            <ion-label class="my-label">SSL Url?</ion-label>
+            <ion-toggle slot="end" color="success " class="icon" [(ngModel)]="sslToggled"
+                (ionChange)="ChangeSSLValue()">
+            </ion-toggle>
+        </ion-item>
+
+        <ion-button shape="round" class="user_sub_btn" (click)="gologin()" style="margin-top: 0px">Submit
+        </ion-button>
+
+    </ion-row>
+</div>

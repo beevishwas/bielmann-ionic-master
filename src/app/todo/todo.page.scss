@@ -1,0 +1,37 @@
+.container {
+  border-left: 1px solid rgb(208, 209, 209);
+  height: 500px;
+}
+
+.todo_list {
+  margin-top: 10px;
+  flex-direction: column;
+  display: flex;
+  border: 1px solid;
+}
+
+.todo_item_sel {
+  min-height: 45px;
+  background-color: rgb(39, 196, 39);
+  padding: 5px;
+  border-bottom: 0.5px rgb(208, 209, 209) solid;
+}
+.todo_item {
+  min-height: 45px;
+  padding: 5px;
+  background-color: rgb(233, 233, 233);
+  border-bottom: 0.5px rgb(208, 209, 209) solid;
+}
+
+.task_item_sel {
+  min-height: 45px;
+  background-color: orange;
+  padding: 5px;
+  border-bottom: 0.5px rgb(208, 209, 209) solid;
+}
+.task_item {
+  min-height: 45px;
+  padding: 5px;
+  background-color: rgb(233, 233, 233);
+  border-bottom: 0.5px rgb(208, 209, 209) solid;
+}
