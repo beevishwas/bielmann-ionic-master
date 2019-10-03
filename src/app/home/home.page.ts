@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
+import { GlobalVariable } from '../common/globals';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomePage {
 
   constructor(public alertController: AlertController, public navCtrl: NavController,
      public router: Router, private storage: Storage, public toastController: ToastController) {
-    storage.get('BM_SSL_URL').then((val) => {
+    storage.get(GlobalVariable.CookieName.baseUrl).then((val) => {
       if (val && val != '') {
         this.router.navigate(['/login']);
       }
@@ -34,7 +35,7 @@ export class HomePage {
 
   gologin() {
     if (this.Url != '') {
-      this.storage.set('BM_SSL_URL', this.sslValue + this.Url);
+      this.storage.set(GlobalVariable.CookieName.baseUrl, this.sslValue + this.Url);
       this.router.navigate(['/login']);
     } else {
       this.presentToast();

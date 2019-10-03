@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-
+import { Storage } from '@ionic/storage';
+import { GlobalVariable } from '../common/globals';
 
 
 @Component({
@@ -11,7 +11,15 @@ import { Router } from '@angular/router';
 })
 export class DashboardPage implements OnInit {
 
-  constructor(public router: Router) { }
+  baseUrl: String
+  constructor(private storage: Storage, public router: Router) {
+    storage.get(GlobalVariable.CookieName.baseUrl).then((val) => {
+      console.log("Base Url", val);
+      if (val && val != '') {
+        this.baseUrl = val;
+      }
+    });
+   }
 
   // "imgdisplay":
   // [

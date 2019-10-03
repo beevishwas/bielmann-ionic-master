@@ -5,7 +5,7 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { LogicService } from '../services/logic.service'
 import { ToastController } from '@ionic/angular';
-
+import { GlobalVariable } from '../common/globals';
 import { LoadingController } from '@ionic/angular';
 
 @Component({
@@ -20,7 +20,8 @@ export class LoginPage implements OnInit {
   baseUrl: string;
   constructor(public loadingController: LoadingController, public alertController: AlertController,
     public router: Router, public navCtrl: NavController, private storage: Storage, public restProvider: LogicService, public toastController: ToastController) {
-    storage.get('BM_SSL_URL').then((val) => {
+    storage.get(GlobalVariable.CookieName.baseUrl).then((val) => {
+      console.log("Base Url", val);
       if (val && val != '') {
         this.baseUrl = val;
       }
@@ -33,10 +34,14 @@ export class LoginPage implements OnInit {
   async submit() {
     if (this.username && this.password) {
       this.presentLoading()
-      this.restProvider.Login(this.baseUrl, { email: 'testtest1@mail.drogerie-bielmann.ch', password: 'Qwe123!!new1' })
+      let body = `email=${this.username}&password=${this.password}`;
+      this.restProvider.Login(this.baseUrl, { email: this.username, password: this.password })
         .then((result) => {
+          this.loadingController.dismiss();
+          console.log("Login result : ", JSON.stringify(result));
           this.router.navigate(['/dashboard']);
         }, (err) => {
+          this.loadingController.dismiss();
           console.log(err);
         });
     } else {
